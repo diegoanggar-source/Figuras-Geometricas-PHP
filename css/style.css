@@ -1,0 +1,189 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+}
+
+/* Estilos para el encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Estilos para la sección principal que contiene las figuras */
+section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: center;
+    gap: 30px; /* Espacio entre los artículos */
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para cada artículo (figura) */
+article {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    flex: 1 1 250px; /* Flexbox: permite que cada artículo crezca, se encoja y tenga un tamaño base */
+    min-width: 250px;
+}
+
+article:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los enlaces dentro de los artículos */
+article a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #333;
+    display: block;
+}
+
+/* Estilos para las imágenes de las figuras */
+.imgen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Estilos para el texto de las figuras (nombre) */
+article span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Estilos para el pie de página */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #888;
+    border-top: 1px solid #ddd; /* Línea separadora */
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para los campos de entrada de tipo 'number' */
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 16px;
+}
+
+/* Efecto al seleccionar un campo de entrada */
+form input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none; /* Elimina el contorno azul predeterminado del navegador */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilos para el botón de 'submit' */
+form input[type="submit"] {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Estilos para el contenedor del texto y el h6 */
+span {
+    display: flex; /* Convierte el span en un contenedor flexible */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    margin-bottom: 5px; /* Agrega un pequeño espacio debajo */
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente para que se vea bien */
+    color: #555; /* Un color de texto más suave */
+}
+
+/* Estilos para el h6 dentro del span */
+span h6 {
+    margin: 0; /* Elimina el margen predeterminado del h6 */
+    font-weight: normal; /* Vuelve el texto del h6 a un grosor normal */
+    font-size: 1em; /* Asegura que el tamaño de la fuente sea el mismo o similar al del texto del span */
+    margin-left: 5px; /* Agrega un pequeño espacio a la izquierda del texto */
+    color: #888; /* Un color de texto más suave para el h6 */
+}
+
+/* --- Media Queries para el diseño responsivo --- */
+
+/* Teléfonos (hasta 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    section {
+        flex-direction: column; /* Apila las figuras en una sola columna */
+        align-items: center;
+    }
+    
+    article {
+        width: 100%;
+        margin-bottom: 15px; /* Espacio entre las figuras apiladas */
+    }
+}
+
+/* Tablets (entre 601px y 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    section {
+        gap: 20px; /* Espacio un poco más reducido en tabletas */
+    }
+    
+    article {
+        flex: 1 1 40%; /* Dos columnas por fila */
+    }
+}
